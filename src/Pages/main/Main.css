@@ -1,3 +1,7 @@
+.container{
+    min-height: 100vh;
+}
+
 .Main{
     display: flex;
     flex-direction: column;
@@ -7,9 +11,13 @@
     .Main {
       flex-direction: row;
     }
-    .right-col{
-        flex-grow: 1;
+    .left-col{
+        order: 2;
     }
+    .right-col{
+        order: 1;
+    }
+
   }
 
 .form{
@@ -24,7 +32,7 @@
 .input-text{
     width: 90vw;
     height: 50vh;
-    color: "#5a2434";
+    color: "#5a2434";    
 }
 
 .left-col{
@@ -32,6 +40,18 @@
     justify-content: center;
     align-items: center;
     flex-direction: column;    
-    flex-grow: 1;
+    flex-grow: 2;
+    order: 2;
 }
 
+.right-col{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-grow: 1;
+    order: 1;
+}
+
+.slogan-img{
+    min-width: 200px;
+}

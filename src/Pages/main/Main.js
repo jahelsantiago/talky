@@ -11,17 +11,20 @@ import '@tensorflow/tfjs-backend-cpu';
 import '@tensorflow/tfjs-backend-webgl';
 import { makeStyles } from '@material-ui/core/styles';
 import { useRef } from 'react'
-import TextareaAutosize from '@material-ui/core/TextareaAutosize';
+import slogan from "../../Images/slogan.png"
 import SnackBarr from './SnackBarr'
+
 
 const useStyles = makeStyles((theme)=>({
     contextText :{        
         width : "95%",
         marginBottom : "10px",                
+        overflow : "hiden"
 
     },
     questionText :{
         width : "95%",
+        overflow : "hiden"
         
     },
     button:{
@@ -96,7 +99,7 @@ const Main = () => {
 
 
     return (
-        <>
+        <div className = "container">
         <NavBar/>
         <div className = "Main">
             <div className="left-col">                
@@ -106,7 +109,7 @@ const Main = () => {
                         placeholder = "Paste a text here and I will analize it for you..."
                         multiline
                         rows = {18}                            
-                        variant="filled"
+                        variant="outlined"
                         value = {contextText} 
                         onChange = {(e)=>{setcontextText(e.target.value)}}
                         error = {missingContextText}
@@ -119,7 +122,7 @@ const Main = () => {
                         placeholder = "Ask a question about the text"
                         multiline
                         rows={1}                            
-                        variant="filled"
+                        variant="outlined"
                         value = {questionText} 
                         onChange = {(e)=>{setQuestionText(e.target.value)}}
                         error = {missingQuestionText}
@@ -132,15 +135,15 @@ const Main = () => {
                 </Button>
             </div>
             <div className="right-col">
-                
+                <img src={slogan} alt="" className = "slogan-img"/>
             </div>
         </div>
         <SnackBarr
             open = {openAnswerMessage}
             setOpen = {setOpenAnswerMessage}
             message = {answerMessage}
-        />
-        </>
+        />        
+        </div>
     )
 }
 
