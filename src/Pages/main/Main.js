@@ -13,6 +13,7 @@ import { makeStyles } from '@material-ui/core/styles';
 import { useRef } from 'react'
 import slogan from "../../Images/slogan.png"
 import SnackBarr from './SnackBarr'
+import About from '../about/About'
 
 
 const useStyles = makeStyles((theme)=>({
@@ -54,6 +55,8 @@ const Main = () => {
     const [openAnswerMessage, setOpenAnswerMessage] = useState(false)
 
     const modelPromise = useRef(null)
+
+    const [openModal, setOpenModal] = useState(false)
 
     useEffect(() => {
         if(firstRender){
@@ -100,7 +103,7 @@ const Main = () => {
 
     return (
         <div className = "container">
-        <NavBar/>
+        <NavBar setOpenModal = {setOpenModal}/>
         <div className = "Main">
             <div className="left-col">                
                 <form action="" className = "form">                        
@@ -138,11 +141,13 @@ const Main = () => {
                 <img src={slogan} alt="" className = "slogan-img"/>
             </div>
         </div>
+        <About open = {openModal} setOpen = {setOpenModal}/>
         <SnackBarr
             open = {openAnswerMessage}
             setOpen = {setOpenAnswerMessage}
             message = {answerMessage}
-        />        
+        />     
+           
         </div>
     )
 }

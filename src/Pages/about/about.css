@@ -1,0 +1,48 @@
+.about-container{
+    background-color: antiquewhite;
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: auto;
+    margin-bottom: auto;
+    
+    height: 500px;
+    max-width: 600px;
+}
+
+.header-about{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: #885f60;
+}
+
+.header-text h1{
+    color: rgb(247, 172, 93);
+    font-weight: 600;
+    font-size: 20px;
+    margin-left: 10px;
+}
+
+p{
+    margin: 10px;
+    text-align: justify;
+}
+
+.bert-img{
+    position: relative;    
+}
+
+@media screen and (max-width: 350px) {
+    .bert-img{
+        display: none;
+    }
+    .about-container{
+        height: fit-content;
+    }
+}

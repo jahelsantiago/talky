@@ -4,18 +4,24 @@ import React from 'react'
 import logo from '../../Images/logo_no_text.jpg'
 import "./NavBar.css"
 
-const NavBar = () => {
+
+const NavBar = ({setOpenModal}) => {
     return (
         <div className = "nav-bar">
-            <img src={logo} alt="" className = "image"/>
-            <a rel = "noreferrer" href = "https://github.com/jahelsantiago/talky" target = "_blank">
+            
             <IconButton>                
-                <GitHub fontSize = "large" style = {{color : "white"}}/>
-            </IconButton>            
-            </a>
-            <IconButton className = "about-button" style = {{color : "#f7ac5d", fontWeight : "600"}}>
-                ABOUT
+                <img src={logo} alt="" className = "image"/>                
             </IconButton>
+            <IconButton>                
+                <a rel = "noreferrer" href = "https://github.com/jahelsantiago/talky" target = "_blank">
+                    <GitHub fontSize = "large" style = {{color : "white"}}/>
+                </a>
+            </IconButton>            
+            
+            <IconButton className = "about-button" style = {{color : "#f7ac5d", fontWeight : "600"}} onClick = {()=>{setOpenModal(true)}}>
+                    ABOUT
+            </IconButton>
+            
             
         </div>
     )
